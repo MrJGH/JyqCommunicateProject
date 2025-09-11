@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="miscellaneous_phone_notch_height">@dimen/x32</dimen>
+</resources>

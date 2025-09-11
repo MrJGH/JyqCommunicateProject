@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <com.jxw.yuliao.widget.TitleBarView
+            android:id="@+id/titleBarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/wei_liao"
+            app:titleBackgroundColor="@color/black"
+            app:titleColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/select_header_title_hint_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/x10"
+            android:paddingEnd="@dimen/x20"
+            android:text="@string/select_header_hint"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x26"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleBarView"
+            tools:text="开始使用时，请先设置你的头像和昵称哦" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_user_header_point_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y30"
+            android:paddingStart="@dimen/x10"
+            android:text="@string/user_header_point_hint"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x26"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/select_header_title_hint_tv" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/select_header_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y20"
+            android:paddingHorizontal="@dimen/x11"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_user_header_point_hint"
+            app:spanCount="3"
+            tools:itemCount="8"
+            tools:listitem="@layout/item_select_header_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/select_name_hint_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/x10"
+            android:text="@string/user_name_point"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x26"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/select_header_rv" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x70"
+            android:layout_marginHorizontal="@dimen/x10"
+            android:layout_marginTop="@dimen/y20"
+            android:background="@drawable/shape_white_corner_12"
+            android:gravity="center_vertical"
+            android:hint="@string/please_input_your_name"
+            android:maxLength="8"
+            android:paddingStart="@dimen/x20"
+            android:paddingEnd="@dimen/x5"
+            android:singleLine="true"
+            android:text="@string/baby"
+            android:textColor="@color/white"
+            android:textColorHint="@color/color_666666"
+            android:textSize="@dimen/x26"
+            app:layout_constraintTop_toBottomOf="@id/select_name_hint_tv"
+            tools:text="宝宝" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y90"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/next_tv"
+                android:layout_width="@dimen/x210"
+                android:layout_height="@dimen/x70"
+                android:background="@drawable/shape_blue_corner_12"
+                android:gravity="center"
+                android:text="@string/next"
+                android:textColor="@color/white"
+                android:textSize="@dimen/x26"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="triggerDelayKey" type="id"/>
+    <item name="triggerLastTimeKey" type="id"/>
+    <item name="camera_control_view" type="id"/>
+    <item name="rl_turn_camera_mirror_view" type="id"/>
+
+</resources>

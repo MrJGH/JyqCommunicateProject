@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="call_line_busy">对方正在通话中</string>
+    <string name="call_success">呼叫成功</string>
+    <string name="call_fail">呼叫失败</string>
+    <string name="hangup_success">挂断成功</string>
+    <string name="hangup_fail">挂断失败</string>
+
+    <string name="voip_video_call">视频通话</string>
+    <string name="voip_audio_call">音频通话</string>
+    <string name="hangup">挂断</string>
+    <string name="voip_refuse">拒绝</string>
+    <string name="voip_accept">接受</string>
+
+    <string name="microphone">麦克风</string>
+    <string name="microphone_open">麦克风已开</string>
+    <string name="microphone_close">麦克风已关</string>
+    <string name="cancel">取消</string>
+    <string name="loudspeaker">扬声器</string>
+    <string name="loudspeaker_open">扬声器已开</string>
+    <string name="loudspeaker_close">扬声器已关</string>
+    <string name="turn">翻转</string>
+    <string name="mirror">镜像</string>
+    <string name="sound_off">静音</string>
+    <string name="camera_open">摄像头已开启</string>
+    <string name="camera_close">摄像头已关闭</string>
+
+    <string name="waiting_accept">正在等待对方接受邀请...</string>
+    <string name="invite_audio_call">邀请你进行语音通话</string>
+    <string name="invite_video_call">邀请你进行视频通话</string>
+    <string name="call_finish">通话已结束</string>
+    <string name="call_fail_hint">提示：请联系家长开通音视频通知权限，才能进行通话哦~</string>
+</resources>

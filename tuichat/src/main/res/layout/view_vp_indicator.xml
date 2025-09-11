@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivPoi"
+        android:layout_width="@dimen/x8"
+        android:layout_height="@dimen/x8"
+        android:layout_marginHorizontal="@dimen/x4" />
+
+</RelativeLayout>

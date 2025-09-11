@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/twecall_vip_hint_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_66000000">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/x260"
+        android:layout_height="@dimen/x260"
+        android:background="@drawable/shape_white_corner_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_ok_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/x20"
+            android:text="@string/twecall_vip_hint"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/x26"
+            app:layout_constraintBottom_toTopOf="@id/tv_ok"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_ok"
+            android:layout_width="@dimen/x180"
+            android:layout_height="@dimen/x60"
+            android:layout_marginTop="@dimen/x30"
+            android:background="@drawable/shape_blue_corner_12"
+            android:gravity="center"
+            android:text="@string/good"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x30"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_ok_hint" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

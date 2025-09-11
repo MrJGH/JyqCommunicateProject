@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="triggerDelayKey" type="id"/>
+    <item name="triggerLastTimeKey" type="id"/>
+    <item name="refresh_iv" type="id"/>
+    <item name="refresh_tv" type="id"/>
+    <item name="next_tv" type="id"/>
+
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/audio_content_ll"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/audio_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/x6"
+        android:layout_marginEnd="@dimen/x6"
+        android:lines="1"
+        android:textColor="@color/color_333333"
+        android:textDirection="ltr"
+        android:textSize="@dimen/x26"
+        tools:text="12" />
+
+    <ImageView
+        android:id="@+id/audio_play_iv"
+        android:layout_width="@dimen/x34"
+        android:layout_height="@dimen/x34"
+        android:layout_gravity="center_vertical"
+        android:scaleType="centerCrop"
+        android:src="@drawable/voice_msg_playing_3" />
+
+</LinearLayout>
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/twecall_vip_hint_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_66000000">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/x400"
+        android:layout_height="@dimen/x220"
+        android:background="@drawable/shape_white_corner_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x38"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/x30"
+            android:text="@string/twecall_vip_hint"
+            android:textColor="@color/color_222222"
+            android:textSize="@dimen/x26"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_ok"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/x50"
+            android:layout_marginTop="@dimen/x25"
+            android:layout_marginBottom="@dimen/x30"
+            android:background="@drawable/shape_blue_corner_25"
+            android:gravity="center"
+            android:text="@string/good"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x24"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

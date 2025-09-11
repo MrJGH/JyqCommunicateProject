@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <com.jxw.yuliao.widget.TitleBarView
+        android:id="@+id/main_title_bar_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:imageRightVisibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/wei_liao"
+        app:titleBackgroundColor="@color/black"
+        app:titleColor="@color/white" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_title_bar_2"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/qrcode_cl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_title_bar_2"
+        tools:visibility="visible">
+
+        <com.jxw.yuliao.widget.QrcodeView
+            android:id="@+id/qrcode_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y59"
+            android:adjustViewBounds="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/wechat_bind_hint_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/x25"
+            android:layout_marginTop="@dimen/y30"
+            android:gravity="center"
+            android:text="@string/wechat_scan_qrcode_bind_children_information"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x26"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/qrcode_iv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/y20"
+            android:gravity="center"
+            android:text="@string/bind_success_hint"
+            android:textColor="@color/color_FFA714"
+            android:textSize="@dimen/x20"
+            app:layout_constraintBottom_toTopOf="@id/refresh_tv"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/refresh_tv"
+            android:layout_width="@dimen/x210"
+            android:layout_height="@dimen/x70"
+            android:layout_marginBottom="@dimen/y20"
+            android:background="@drawable/shape_blue_corner_12"
+            android:gravity="center"
+            android:text="@string/input_chat"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x26"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.jxw.yuliao.TabRecyclerView
+        android:id="@+id/tab_list"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

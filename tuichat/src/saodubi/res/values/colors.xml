@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="chat_background_color">#000000</color>
+    <color name="chat_title_line_color">#000000</color>
+    <color name="color_262626">#262626</color>
+
+    <color name="voice_pressed">#26FFFFFF</color>
+    <color name="voice_normal">#4DFFFFFF</color>
+    <color name="color_3399FF">#3399FF</color>
+</resources>

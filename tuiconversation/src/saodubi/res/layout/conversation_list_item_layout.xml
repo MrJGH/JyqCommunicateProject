@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_left"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/x88"
+    android:background="@drawable/shape_white_corner_12"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/x20">
+
+    <CheckBox
+        android:id="@+id/select_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="6.23dp"
+        android:button="@drawable/checkbox_selector"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="@dimen/x60"
+        android:layout_height="match_parent">
+
+        <com.tencent.qcloud.tuikit.tuiconversation.classicui.widget.ConversationIconView
+            android:id="@+id/conversation_icon"
+            android:layout_width="@dimen/x54"
+            android:layout_height="@dimen/x54"
+            android:layout_centerVertical="true" />
+
+        <com.tencent.qcloud.tuikit.timcommon.component.UnreadCountTextView
+            android:id="@+id/conversation_unread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/x6"
+            android:layout_marginEnd="@dimen/x3"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/x18"
+            tools:text="99+" />
+
+        <View
+            android:id="@+id/user_status"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="?attr/user_status_offline"
+            android:elevation="4dp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="0dp"
+        android:paddingStart="@dimen/x4">
+
+        <TextView
+            android:id="@+id/conversation_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/x9"
+            android:ellipsize="end"
+            android:gravity="top|start"
+            android:maxWidth="180dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x26"
+            tools:text="爸爸" />
+
+        <TextView
+            android:layout_marginTop="@dimen/x9"
+            android:id="@+id/conversation_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/x19"
+            android:textColor="@color/conversation_item_time_color"
+            android:textSize="@dimen/x22"
+            tools:text="星期三" />
+
+        <ImageView
+            android:id="@+id/mark_banner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/conversation_list_time_margin_right"
+            android:src="@drawable/conversation_mark_banner"
+            android:visibility="gone" />
+
+
+        <RelativeLayout
+            android:id="@+id/message_status_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/view_line"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="1.37dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="@dimen/conversation_list_text_margin_bottom"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/message_status_sending"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/ic_sending_status"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/message_status_failed"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center_vertical"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_send_failed"
+                android:visibility="gone"
+                tools:visibility="visible" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/conversation_risk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/view_line"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/conversation_list_text_margin_bottom"
+            android:layout_toEndOf="@id/message_status_layout"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/conversation_risk_message_extra"
+            android:textColor="@color/read_dot_bg"
+            android:textSize="@dimen/x22"
+            android:visibility="gone"
+            tools:visibility="gone" />
+
+        <TextView
+            android:id="@+id/conversation_at_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/view_line"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/conversation_list_text_margin_bottom"
+            android:layout_toEndOf="@id/conversation_risk"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/ui_at_all"
+            android:textColor="@color/read_dot_bg"
+            android:textSize="@dimen/x22"
+            android:visibility="gone"
+            tools:visibility="gone" />
+
+        <TextView
+            android:id="@+id/conversation_at_me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/view_line"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/conversation_list_text_margin_bottom"
+            android:layout_toEndOf="@id/conversation_at_all"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/ui_at_me"
+            android:textColor="@color/read_dot_bg"
+            android:textSize="@dimen/x22"
+            android:visibility="gone"
+            tools:visibility="gone" />
+
+        <TextView
+            android:id="@+id/conversation_draft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/view_line"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/conversation_list_text_margin_bottom"
+            android:layout_toEndOf="@id/conversation_at_me"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/drafts"
+            android:textColor="@color/read_dot_bg"
+            android:textSize="@dimen/x22"
+            android:visibility="gone"
+            tools:visibility="gone" />
+
+        <TextView
+            android:id="@+id/conversation_last_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/view_line"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/x60"
+            android:layout_marginBottom="@dimen/conversation_list_text_margin_bottom"
+            android:layout_toEndOf="@+id/conversation_draft"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/list_bottom_text_bg"
+            android:textSize="@dimen/x22"
+            tools:text="MessageContent" />
+
+        <ImageView
+            android:id="@+id/not_disturb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/view_line"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/conversation_list_time_margin_right"
+            android:layout_marginBottom="@dimen/conversation_list_text_margin_bottom"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:src="@drawable/ic_disturb"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/conversation_list_divide_line_height"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="12dp"
+            android:background="@color/conversation_divide_line_color"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

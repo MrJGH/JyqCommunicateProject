@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundCornerImageView">
+        <attr name="corner_radius" format="dimension" />
+        <attr name="left_top_radius" format="dimension" />
+        <attr name="right_top_radius" format="dimension" />
+        <attr name="right_bottom_radius" format="dimension" />
+        <attr name="left_bottom_radius" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="MoveTextureView">
+        <attr name="textureView_type" format="enum">
+            <enum name="myself" value="0"/>  //0自己
+            <enum name="himself" value="1"/>  //1 对方
+        </attr>
+        <attr name="textureView_can_move" format="boolean"/>
+    </declare-styleable>
+
+</resources>

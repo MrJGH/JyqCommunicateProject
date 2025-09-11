@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="chat_input_more_height">@dimen/y142</dimen>
+    <dimen name="chat_input_layout_height">@dimen/y65</dimen>
+    <dimen name="chat_voice_input_height">@dimen/y44</dimen>
+    <dimen name="chat_input_more_btn_width">@dimen/y35</dimen>
+    <dimen name="chat_input_more_btn_height">@dimen/y35</dimen>
+</resources>

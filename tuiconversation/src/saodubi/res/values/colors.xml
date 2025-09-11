@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="conversation_page_bg">#000000</color>
+    <color name="conversation_item_time_color">#999999</color>
+    <color name="list_bottom_text_bg">#999999</color>
+
+</resources>

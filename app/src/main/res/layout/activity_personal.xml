@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_F3F3F3">
+
+        <com.jxw.yuliao.widget.TitleBarView
+            android:id="@+id/titleBarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/personal_information" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header_cl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y84"
+            android:layout_marginHorizontal="@dimen/x20"
+            android:layout_marginTop="@dimen/y10"
+            android:background="@drawable/shape_white_corner_10"
+            app:layout_constraintTop_toBottomOf="@id/titleBarView">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/x20"
+                android:gravity="center_vertical"
+                android:text="@string/header_image"
+                android:textSize="@dimen/x26"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/header_iv"
+                android:layout_width="@dimen/x64"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/x20"
+                android:adjustViewBounds="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/header_one" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/x20"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/x20"
+                android:layout_marginBottom="@dimen/y8"
+                android:adjustViewBounds="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/icon_edit" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/name_cl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y84"
+            android:layout_marginHorizontal="@dimen/x20"
+            android:layout_marginTop="@dimen/y10"
+            android:background="@drawable/shape_white_corner_10"
+            app:layout_constraintTop_toBottomOf="@id/header_cl">
+
+            <TextView
+                android:id="@+id/user_name_hint_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/x20"
+                android:gravity="center_vertical"
+                android:text="@string/user_name"
+                android:textSize="@dimen/x26"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/user_name_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:hint="@string/please_input_name"
+                android:lines="1"
+                android:paddingStart="@dimen/x20"
+                android:textColor="@color/color_333333"
+                android:textColorHint="@color/color_999999"
+                android:textSize="@dimen/x26"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/more_iv"
+                app:layout_constraintStart_toEndOf="@id/user_name_hint_tv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginEnd="@dimen/x20"
+                app:srcCompat="@drawable/header_one" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/more_iv"
+                android:layout_width="@dimen/x52"
+                android:layout_height="@dimen/y32"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_more" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_vip_center"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x100"
+            android:layout_marginHorizontal="@dimen/x20"
+            android:layout_marginTop="@dimen/y10"
+            android:background="@drawable/ic_personal_center"
+            android:paddingHorizontal="@dimen/x20"
+            app:layout_constraintTop_toBottomOf="@id/name_cl">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_vip_center_status_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/x22"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_vip_center"
+                tools:text="2024.10.29过期" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_vip_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vip_center"
+                android:textColor="@color/color_222222"
+                android:textSize="@dimen/x26"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_vip_center_hint"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_vip_center_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vip_center_hint"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/x20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_vip_center" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.jxw.yuliao.widget.QrcodeView
+            android:id="@+id/qrcode_iv"
+            android:layout_width="@dimen/x260"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y30"
+            android:adjustViewBounds="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_vip_center"
+            app:layout_goneMarginTop="@dimen/y40"
+            app:srcCompat="@drawable/header_one" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/wechat_bind_hint_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/x25"
+            android:layout_marginTop="@dimen/y30"
+            android:gravity="center"
+            android:text="@string/wechat_scan_qrcode_bind_children_information"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/x24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/qrcode_iv" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

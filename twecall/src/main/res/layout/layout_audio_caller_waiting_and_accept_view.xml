@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_mic"
+            android:layout_width="@dimen/x80"
+            android:layout_height="@dimen/x80"
+            app:layout_constraintEnd_toStartOf="@id/iv_cancel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/selector_mic" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_mic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x8"
+            android:text="@string/microphone_open"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x26"
+            app:layout_constraintEnd_toEndOf="@id/iv_mic"
+            app:layout_constraintStart_toStartOf="@id/iv_mic"
+            app:layout_constraintTop_toBottomOf="@id/iv_mic" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_cancel"
+            android:layout_width="@dimen/x80"
+            android:layout_height="@dimen/x80"
+            app:layout_constraintEnd_toStartOf="@id/iv_loudspeaker"
+            app:layout_constraintStart_toEndOf="@id/iv_mic"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_tuicallkit_hangup" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x8"
+            android:text="@string/cancel"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x26"
+            app:layout_constraintEnd_toEndOf="@id/iv_cancel"
+            app:layout_constraintStart_toStartOf="@id/iv_cancel"
+            app:layout_constraintTop_toBottomOf="@id/iv_cancel" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_loudspeaker"
+            android:layout_width="@dimen/x80"
+            android:layout_height="@dimen/x80"
+            app:layout_constraintEnd_toStartOf="@id/iv_sound_off"
+            app:layout_constraintStart_toEndOf="@id/iv_cancel"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/selector_loudspeaker" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_loudspeaker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x8"
+            android:text="@string/loudspeaker_open"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x26"
+            app:layout_constraintEnd_toEndOf="@id/iv_loudspeaker"
+            app:layout_constraintStart_toStartOf="@id/iv_loudspeaker"
+            app:layout_constraintTop_toBottomOf="@id/iv_loudspeaker" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_sound_off"
+            android:layout_width="@dimen/x80"
+            android:layout_height="@dimen/x80"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_loudspeaker"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/selector_loudspeaker"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_sound_off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x8"
+            android:text="@string/sound_off"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x26"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/iv_sound_off"
+            app:layout_constraintStart_toStartOf="@id/iv_sound_off"
+            app:layout_constraintTop_toBottomOf="@id/iv_sound_off"
+            tools:visibility="visible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

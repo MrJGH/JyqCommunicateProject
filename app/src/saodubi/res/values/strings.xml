@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="user_name_point_hint">昵称：</string>
+    <string name="user_header_point_hint">头像：</string>
+    <string name="input_chat">进入微聊</string>
+    <string name="bind_success_hint">绑定成功后点击【进入微聊】</string>
+</resources>

@@ -1,0 +1,70 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+}
+
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdk rootProject.ext.compileSdkVersion
+    namespace 'com.tencent.qcloud.tuikit.tuichat'
+
+    defaultConfig {
+        minSdk rootProject.ext.minSdkVersion
+        renderscriptSupportModeEnabled false
+        renderscriptTargetApi 30
+        flavorDimensions "default"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // 主题资源文件夹
+    sourceSets {
+        main {
+            res.srcDirs += "src/main/res-light"
+            res.srcDirs += "src/main/res-lively"
+            res.srcDirs += "src/main/res-serious"
+        }
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        buildConfig = true
+    }
+    productFlavors {
+        kdxxj {
+            buildConfigField 'int', "INPUT_MORE_COLUMN_COUNT", "4"//聊天界面 更多功能中的 每页数量
+        }
+        saodubi {
+            buildConfigField 'int', "INPUT_MORE_COLUMN_COUNT", "2"//聊天界面 更多功能中的 每页数量
+        }
+    }
+}
+
+
+dependencies {
+
+    implementation "androidx.appcompat:appcompat:$rootProject.ext.appcompat_version"
+    implementation "com.google.android.material:material:$rootProject.ext.material_version"
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glide_version"
+    implementation "com.google.code.gson:gson:$rootProject.ext.gson_version"
+    implementation "androidx.viewpager2:viewpager2:$rootProject.ext.viewpager2_version"
+    api "androidx.datastore:datastore-preferences:$rootProject.ext.datastore_version"
+
+    implementation "androidx.datastore:datastore-preferences-rxjava3:$rootProject.ext.datastore_version"
+
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+
+    api project(':timcommon')
+}

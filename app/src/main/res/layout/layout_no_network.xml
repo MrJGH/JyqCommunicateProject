@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/white"
+        android:id="@+id/network_cl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/no_network_hint_iv"
+            android:layout_width="@dimen/x259"
+            android:layout_height="@dimen/y207"
+            android:layout_marginTop="@dimen/y168"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/no_network" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_line"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/no_network_hint_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y30"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            android:text="@string/please_check_network"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/x24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/no_network_hint_iv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/check_network_tv"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y50"
+            android:layout_marginTop="@dimen/y49"
+            android:layout_marginEnd="@dimen/x20"
+            android:background="@drawable/shape_white_corner_25_stroke_blue"
+            android:gravity="center"
+            android:text="@string/check_network"
+            android:textColor="@color/color_74A1FE"
+            android:textSize="@dimen/x26"
+            app:layout_constraintEnd_toStartOf="@id/guide_line"
+            app:layout_constraintTop_toBottomOf="@id/no_network_hint_tv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/reload_tv"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y50"
+            android:layout_marginStart="@dimen/x20"
+            android:background="@drawable/shape_blue_corner_25"
+            android:gravity="center"
+            android:text="@string/reload"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x26"
+            app:layout_constraintStart_toEndOf="@id/guide_line"
+            app:layout_constraintTop_toTopOf="@id/check_network_tv" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

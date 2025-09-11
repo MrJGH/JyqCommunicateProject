@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="@dimen/x220"
+        android:layout_height="@dimen/x220">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_qrcode"
+            android:layout_width="@dimen/x210"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true" />
+
+        <LinearLayout
+            android:id="@+id/ll_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="@dimen/x80"
+                android:layout_height="@dimen/x80"
+                android:indeterminateBehavior="repeat"
+                android:indeterminateDrawable="@drawable/bind_loading"
+                android:indeterminateOnly="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x20"
+                android:text="@string/loading"
+                android:textColor="@color/white"
+                android:textSize="@dimen/x26" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="gone">
+
+            <ImageView
+                android:layout_width="@dimen/x90"
+                android:layout_height="@dimen/x90"
+                android:adjustViewBounds="true"
+                android:src="@drawable/icon_code_refresh" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_no_net"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/ll_link_net"
+                android:layout_width="@dimen/x160"
+                android:layout_height="@dimen/x60"
+                android:background="@drawable/shape_blue_corner_12"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/to_connect_net_work"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/x26" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/x24"
+                    android:layout_marginLeft="@dimen/x11"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/icon_sz_qlw" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x24"
+                android:text="@string/please_connect_network_repeat"
+                android:textColor="@color/white"
+                android:textSize="@dimen/x26" />
+
+
+        </LinearLayout>
+    </FrameLayout>
+</layout>

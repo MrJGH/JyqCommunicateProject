@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TitleBar">
+        <attr name="title" format="string" />
+        <attr name="titleColor" format="reference" />
+        <attr name="titleBackgroundColor" format="reference" />
+        <attr name="imageBack" format="reference" />
+        <attr name="focusable" format="boolean" />
+        <attr name="isShowLine" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="4" />
+            <enum name="gone" value="8" />
+        </attr>
+        <attr name="imageRightVisibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="4" />
+            <enum name="gone" value="8" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="EditTextDeleteView">
+        <attr name="rightDrawable" format="reference" />
+        <attr name="hint" format="string" />
+        <attr name="imageMarginRight" format="dimension" />
+        <attr name="inputType">
+            <enum name="text" value="1" />
+            <enum name="phone" value="3" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="QrcodeView">
+        <attr name="layout_type" format="enum">
+            <enum name="size_260" value="1"/>
+            <enum name="size_170" value="2"/>
+        </attr>
+    </declare-styleable>
+</resources>

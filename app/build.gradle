@@ -1,0 +1,152 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.devtools.ksp'
+
+}
+
+android {
+    namespace rootProject.ext.name_space
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.application_id
+        minSdk rootProject.ext.minSdkVersion
+        targetSdk rootProject.ext.targetSdkVersion
+        versionCode 2 + dynamicVersionCode(null)
+        versionName "${getAppVersionName()}"
+        multiDexEnabled = true
+        flavorDimensions "default"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        //九学王
+        jxw {
+            storeFile file('jxw-key.jks')
+            keyAlias 'jxwkey'
+            keyPassword 'jjxxww'
+            storePassword 'jjxxww'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.jxw
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.jxw
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    buildFeatures {
+        buildConfig = true
+        dataBinding = true
+    }
+    productFlavors {
+        kdxxj {
+            versionCode 2 + dynamicVersionCode(name)
+            buildConfigField 'String', "AUTH_APPID", "\"com.kdxxj.yuliao\""//应用授权的appid
+        }
+        saodubi {
+            versionCode 1 + dynamicVersionCode(name)
+            buildConfigField 'String', "AUTH_APPID", "\"com.smb.yuliao\""//应用授权的appid
+        }
+    }
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            if (variant.flavorName == "saodubi") {
+                outputFileName = "jxwhy_yuliao.apk"
+            } else if (variant.flavorName == "kdxxj") {
+                outputFileName = "kdxxj_yuliao.apk"
+            } {
+                outputFileName = "kdxxj_yuliao.apk"
+            }
+        }
+
+    }
+}
+
+def getAppVersionName() {
+    return new Date().format("yyyyMMdd.HH", TimeZone.getDefault())
+}
+//当前日期大于上次日期版本号自动+1
+def dynamicVersionCode(flavorName) {
+    def canAdd = false
+    def buildType
+    try {
+        buildType = project.gradle.startParameter.getTaskRequests().args[0][0] + ""
+        if ("assemble" == buildType || buildType.toLowerCase().contains("release")) {
+            canAdd = true
+        }
+    } catch (Exception e) {
+        canAdd = true
+    }
+    print("\n======================buildType======================\n")
+    print("$buildType canAdd:$canAdd")
+    print("\n======================buildType======================\n")
+    def versionCode = 1
+    File file = new File("${project.rootDir.path}/versions.properties")
+    if (!file.exists()) {
+        file.createNewFile()
+    }
+    if (flavorName == null || flavorName.isEmpty()) {
+        flavorName = "default"
+    }
+    def curDateStr = new Date().format('yyyyMMdd', TimeZone.getTimeZone('UTC'))
+    def versionsProperties = new Properties()
+    versionsProperties.load(new FileInputStream(file))
+
+    def versionMsg = versionsProperties.getProperty(flavorName)//20250104_174
+
+    if (versionMsg == null || versionMsg.isEmpty()) {
+        versionsProperties.setProperty(flavorName, "${curDateStr}_${versionCode}")
+        versionsProperties.store(file.newWriter(), null)
+    } else {
+        def msg = versionMsg.split('_')
+        def versionSaveDate = msg[0]
+        versionCode = msg[1].toInteger()
+        if (canAdd && Integer.valueOf(curDateStr) > Integer.valueOf(versionSaveDate)) {
+            versionCode++
+            versionsProperties.setProperty(flavorName, "${curDateStr}_${versionCode}")
+            versionsProperties.store(file.newWriter(), null)
+        }
+    }
+    print("flavorName:${flavorName},versionCode:${versionCode}")
+    return versionCode
+}
+
+dependencies {
+    implementation fileTree(dir: '../basemodel/aar_libs', include: ['*.jar', '*.aar'])
+    implementation "androidx.core:core-ktx:$rootProject.ext.core_ktx_version"
+    implementation "androidx.appcompat:appcompat:$rootProject.ext.appcompat_version"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.ext.constraint_layout_Version"
+    implementation "com.google.android.material:material:$rootProject.ext.material_version"
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttp_version"
+    implementation "androidx.multidex:multidex:$rootProject.ext.multidex_version"
+    implementation "io.github.cymchad:BaseRecyclerViewAdapterHelper:$rootProject.ext.base_recyclerView_adapterHelper"
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glide_version"
+
+
+    api project(path: ':basemodel')
+    api project(path: ':timcommon')
+    api project(path: ':tuichat')
+    api project(path: ':tuiconversation')
+    api project(path: ':tuicore')
+    api project(path: ':twecall')
+
+//    api project(path: ':tuicallkit')
+//    api project(path: ':tuicontact')
+}

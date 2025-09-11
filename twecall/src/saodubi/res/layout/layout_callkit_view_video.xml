@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.jxw.twecall.widget.MoveTextureView
+            android:id="@+id/surfaceView_voip"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:visibility="visible"
+            app:textureView_can_move="false"
+            app:textureView_type="himself" />
+
+        <com.jxw.twecall.widget.MoveTextureView
+            android:id="@+id/textureView_voip"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            app:textureView_can_move="false"
+            app:textureView_type="myself" />
+
+    </LinearLayout>
+
+    <com.jxw.twecall.widget.CallTimerView
+        android:id="@+id/tv_time_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y30"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x26"
+        tools:text="12:00" />
+
+    <com.jxw.twecall.widget.UserInfoView
+        android:id="@+id/user_info_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/rl_turn_camera_mirror_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/y30"
+        android:layout_marginEnd="@dimen/x30" />
+
+    <RelativeLayout
+        android:id="@+id/rl_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:paddingBottom="@dimen/y30" />
+
+
+</RelativeLayout>

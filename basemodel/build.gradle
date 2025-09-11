@@ -1,0 +1,70 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.devtools.ksp'
+    id 'kotlin-parcelize'
+}
+
+android {
+    namespace 'com.jxw.basemodel'
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdk rootProject.ext.minSdkVersion
+        flavorDimensions "default"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        buildConfig = true
+        dataBinding = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    productFlavors {
+        saodubi {
+            buildConfigField 'int', "DEVICE_TYPE", "0"//设备类型 扫读笔
+        }
+        kdxxj {
+            buildConfigField 'int', "DEVICE_TYPE", "1"//设备类型 口袋学习机（横屏）
+        }
+    }
+}
+
+
+dependencies {
+    compileOnly fileTree(dir: 'aar_libs', include: ['*.jar', '*.aar'])
+
+    api "androidx.core:core-ktx:$rootProject.ext.core_ktx_version"
+    api "androidx.appcompat:appcompat:$rootProject.ext.appcompat_version"
+    api "androidx.constraintlayout:constraintlayout:$rootProject.ext.constraint_layout_Version"
+    api "com.google.android.material:material:$rootProject.ext.material_version"
+    api "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttp_version"
+    api "com.github.liujingxing.rxhttp:rxhttp:$rootProject.ext.rxhttp_version"
+    ksp "com.github.liujingxing.rxhttp:rxhttp-compiler:$rootProject.ext.rxhttp_version"
+    api "androidx.multidex:multidex:$rootProject.ext.multidex_version"
+    api "androidx.lifecycle:lifecycle-process:$rootProject.ext.lifecycle_version"
+    api "androidx.lifecycle:lifecycle-runtime-ktx:$rootProject.ext.lifecycle_version"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.ext.lifecycle_version"
+    api "com.github.getActivity:XXPermissions:$rootProject.ext.xxpermission_version"
+    api "com.google.code.gson:gson:$rootProject.ext.gson_version"
+    api "androidx.datastore:datastore-preferences:$rootProject.ext.datastore_version"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.ext.kotlin_coroutines_version"
+    api "com.geyifeng.immersionbar:immersionbar:$rootProject.ext.immersionbar_version"
+
+
+
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="twe_call_control_icon_size">@dimen/x80</dimen>
+    <dimen name="twe_call_control_text_size">@dimen/x26</dimen>
+    <dimen name="twe_call_control_text_top">@dimen/x8</dimen>
+
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:maxLength="12"
+        android:id="@+id/common_editText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y50"
+        android:background="@drawable/shape_gray_corner_10"
+        android:ellipsize="end"
+        android:paddingStart="@dimen/x20"
+        android:textColor="@color/color_333333"
+        android:textColorHint="@color/color_999999"
+        android:textSize="@dimen/x22"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="请输入内容" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/common_dele_iv"
+        android:layout_width="@dimen/x20"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/x16"
+        android:adjustViewBounds="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/common_editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/common_editText"
+        app:srcCompat="@drawable/common_edittext_dele_ic"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/common_hint_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y11"
+        android:textColor="@color/color_FF5656"
+        android:textSize="@dimen/x18"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/common_editText"
+        android:text="@string/no_more_than_10_characters"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>

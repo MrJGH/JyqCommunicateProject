@@ -1,0 +1,66 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk rootProject.ext.compileSdkVersion
+    namespace 'com.tencent.qcloud.tuicore'
+
+    defaultConfig {
+        minSdk rootProject.ext.minSdkVersion
+        flavorDimensions "default"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // 主题资源文件夹
+    sourceSets {
+        main {
+            res.srcDirs += "src/main/res-light"
+            res.srcDirs += "src/main/res-lively"
+            res.srcDirs += "src/main/res-serious"
+        }
+    }
+    buildFeatures {
+        buildConfig = true
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    productFlavors {
+        kdxxj {}
+        saodubi {}
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar', '*.aar'], dir: '../../../../tuikit/android/libs')
+
+//    implementation 'androidx.appcompat:appcompat:1.3.1'
+//    implementation 'com.github.bumptech.glide:glide:4.12.0'
+//    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    api project(':twecall')
+    api project(':basemodel')
+    implementation "androidx.appcompat:appcompat:$rootProject.ext.appcompat_version"
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glide_version"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.ext.recyclerview_version"
+
+    def projects = this.rootProject.getAllprojects().stream().map { project -> project.name }.collect()
+    println "all projects : {$projects}"
+    if (projects.contains("imsdk-plus")) {
+        api project(':imsdk-plus')
+    } else {
+        api rootProject.getProperties().containsKey("imSdk") ? rootProject.ext.imSdk : "com.tencent.imsdk:imsdk-plus:7.6.5011"
+    }
+
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/x80"
+    android:layout_height="@dimen/x80"
+    android:layout_marginHorizontal="@dimen/x13"
+    android:layout_marginBottom="@dimen/y25">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/header_iv"
+        android:layout_width="@dimen/x80"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/header_one" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/header_select_iv"
+        android:layout_width="@dimen/x30"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/icon_header_select"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_F3F3F3">
+
+        <com.jxw.yuliao.widget.TitleBarView
+            android:id="@+id/titleBarView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x70"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/wei_liao" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/select_header_title_hint_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x20"
+            android:paddingStart="@dimen/x20"
+            android:paddingEnd="@dimen/x20"
+            android:text="@string/select_header_hint"
+            android:textSize="@dimen/x20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleBarView"
+            tools:text="开始使用时，请先设置你的头像和昵称哦！开始使用时，请先设置你的头像和昵称哦！" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/select_header_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/select_header_title_hint_tv"
+            app:spanCount="3"
+            tools:itemCount="8"
+            tools:listitem="@layout/item_select_header_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/select_name_hint_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/y54"
+            android:layout_marginStart="@dimen/x18"
+            android:layout_marginTop="@dimen/y69"
+            android:gravity="center_vertical"
+            android:text="@string/user_name_point"
+            android:textSize="@dimen/x26"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/select_header_rv" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/name_tv"
+            android:layout_width="@dimen/x340"
+            android:layout_height="@dimen/y54"
+            android:layout_marginStart="@dimen/x24"
+            android:background="@drawable/shape_gray_corner_27"
+            android:gravity="center_vertical"
+            android:hint="@string/please_input_your_name"
+            android:maxLength="8"
+            android:paddingStart="@dimen/x27"
+            android:paddingEnd="@dimen/x5"
+            android:singleLine="true"
+            android:text="@string/baby"
+            android:textColor="@color/color_333333"
+            android:textColorHint="@color/color_999999"
+            android:textSize="@dimen/x24"
+            app:layout_constraintBottom_toBottomOf="@id/select_name_hint_tv"
+            app:layout_constraintStart_toEndOf="@id/select_name_hint_tv"
+            app:layout_constraintTop_toTopOf="@id/select_name_hint_tv"
+            tools:text="宝宝" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y90"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/next_tv"
+                android:layout_width="@dimen/x200"
+                android:layout_height="@dimen/x50"
+                android:background="@drawable/shape_blue_corner_25"
+                android:gravity="center"
+                android:text="@string/next"
+                android:textColor="@color/white"
+                android:textSize="@dimen/x26"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

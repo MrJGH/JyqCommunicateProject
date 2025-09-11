@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.jxw.twecall.widget.MoveTextureView
+            android:id="@+id/textureView_voip"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:textureView_type="myself" />
+
+        <com.jxw.twecall.widget.MoveTextureView
+            android:id="@+id/surfaceView_voip"
+            android:layout_width="@dimen/x140"
+            android:layout_height="@dimen/y234"
+            android:layout_marginStart="@dimen/x320"
+            android:layout_marginTop="@dimen/x20"
+            android:visibility="visible"
+            app:textureView_type="himself" />
+    </FrameLayout>
+
+    <com.jxw.twecall.widget.CallTimerView
+        android:id="@+id/tv_time_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y30"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x28"
+        tools:text="12:00" />
+
+    <com.jxw.twecall.widget.UserInfoView
+        android:id="@+id/user_info_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y118" />
+
+    <com.jxw.twecall.widget.CameraControlView
+        android:id="@+id/camera_control_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rl_video_view" />
+
+    <RelativeLayout
+        android:id="@+id/rl_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:paddingBottom="@dimen/y20" />
+</RelativeLayout>
